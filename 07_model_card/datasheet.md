@@ -1,10 +1,10 @@
-# Datasheet
+# Datasheet for Customer Churn Dataset
 
-## 1. Motivación
-Por qué se creó el dataset.
+## 1. Motivation
+Purpose of creating the dataset, funding, and creators.
 
-## 2. Composición
-Qué contiene el dataset.
+## 2. Composition
+Instances, features (demographics, usage, billing), and label details.
 
-## 3. Proceso de Recolección
-Cómo se obtuvieron los datos.
+## 3. Collection Process
+Mechanism of collection, timeframe, and ethical considerations.

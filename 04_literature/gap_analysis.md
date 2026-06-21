@@ -1,10 +1,10 @@
-# Análisis de Brechas (Gap Analysis)
+# Gap Analysis
 
-## 1. Estado del Arte
-Lo que se sabe actualmente.
+## 1. Current State of the Art
+Summary of state-of-the-art churn models and methodologies.
 
-## 2. Limitaciones Identificadas
-Problemas en estudios previos.
+## 2. Identified Research Gaps
+Limitations found in existing models (e.g., lack of reproducibility, environment tracking, or data drift handling).
 
-## 3. Oportunidad de Investigación
-Cómo este proyecto llena el vacío.
+## 3. Proposed Project Contribution
+How this reproducible pipeline addresses the identified gaps.

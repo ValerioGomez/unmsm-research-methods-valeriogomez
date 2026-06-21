@@ -1,10 +1,10 @@
-# Matriz de Ajuste del Método
+# Method Fit Matrix
 
-## 1. Problema de Investigación
-Descripción del problema.
+## 1. Research Question
+Define the primary research question (e.g., *To what extent can ensemble machine learning methods predict customer churn in subscription services?*).
 
-## 2. Preguntas de Investigación
-Preguntas principales y secundarias.
+## 2. Methodology & Design
+Outline the analytical design, features of the dataset, and proposed model families.
 
-## 3. Alineación Metodológica
-Cómo el método se alinea con las preguntas y el problema.
+## 3. Alignment Matrix
+Evaluate how the data collection, validation splits, and performance metrics map back to answering the primary research question.

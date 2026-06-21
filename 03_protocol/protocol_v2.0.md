@@ -1,10 +1,10 @@
-# Protocolo v2.0
+# Research Protocol v2.0 (Final Draft)
 
-## 1. Refinamientos Finales
-Cambios realizados.
+## 1. Final Pipeline Architecture
+Document final pipelines including hyperparameter grids, baseline models, and training schedules.
 
-## 2. Plan de Análisis de Datos
-Métodos de análisis.
+## 2. Integrity & Ethics Integration
+Address bias, data privacy, and mitigation measures during pipeline deployment.
 
-## 3. Cronograma
-Planificación final.
+## 3. Timeline & Tasks
+Execution timeline for pipeline auditing and model publication.

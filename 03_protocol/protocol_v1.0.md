@@ -1,10 +1,10 @@
-# Protocolo v1.0
+# Research Protocol v1.0 (Mid-term Draft)
 
-## 1. Título
-Título actualizado.
+## 1. Research Design
+Elaborate on data pre-processing, handling missing values, scaling, and feature engineering.
 
-## 2. Diseño de Investigación
-Detalles del diseño.
+## 2. Evaluation Framework
+Establish evaluation metrics (F1-score, Recall, ROC-AUC) aligned with business costs of churn.
 
-## 3. Métodos de Recolección de Datos
-Técnicas y herramientas.
+## 3. Versioning Protocol
+Outline the plan for data version control using DVC and tracking with MLflow.

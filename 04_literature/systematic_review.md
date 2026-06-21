@@ -1,10 +1,10 @@
-# Revisión Sistemática
+# Systematic Review
 
-## 1. Criterios de Inclusión y Exclusión
-Parámetros de búsqueda.
+## 1. Search Strategy
+Database queries, keywords, and publication year filters.
 
-## 2. Estrategia de Búsqueda
-Bases de datos y palabras clave.
+## 2. Inclusion & Exclusion Criteria
+Detailed criteria for article selection on churn prediction and reproducible ML.
 
-## 3. Resultados Previos
-Resumen de literatura.
+## 3. Synthesis of Literature
+Key methodologies and algorithms identified from literature.

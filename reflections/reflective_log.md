@@ -1,7 +1,11 @@
-# Bitácora Reflexiva
+# Reflective Log
 
-## Sesión 1
-Reflexiones de la primera semana.
+## Session 01: Research Paradigm
+- **What?** 
+- **So What?**
+- **Now What?**
 
-## Sesión 2
-Reflexiones de la segunda semana.
+## Session 02: Methodology Fit Matrix
+- **What?**
+- **So What?**
+- **Now What?**

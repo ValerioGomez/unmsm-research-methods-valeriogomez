@@ -1,10 +1,10 @@
-# Auditoría de Reproducibilidad
+# Reproducibility Audit
 
-## 1. Entorno de Ejecución
-Detalles de dependencias y sistema.
+## 1. Target Study
+Details of the selected external machine learning paper chosen for the reproducibility audit.
 
-## 2. Código y Datos
-Disponibilidad y acceso.
+## 2. Artifact Evaluation
+Review of available code, datasets, Docker environments, and hyperparameter logs.
 
-## 3. Resultados de Reproducción
-Verificación de los hallazgos.
+## 3. Audit Findings
+Summary of replication status and gaps identified in the external study.
