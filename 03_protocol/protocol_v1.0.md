@@ -1,5 +1,9 @@
 # Research Protocol v1.0 (Mid-term Draft)
 
+**Title:** A Reproducible and Fairness-Aware Machine Learning Pipeline for Customer Churn Prediction  
+**Author:** Valerio Gomez  
+**Date:** June 2026
+
 ## 1. Research Design
 Elaborate on data pre-processing, handling missing values, scaling, and feature engineering.
 

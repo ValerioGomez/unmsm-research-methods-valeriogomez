@@ -1,74 +1,65 @@
-# Establishing a Reproducible Predictive Architecture for Customer Churn in Subscription Services
+# Customer Churn Prediction – Reproducible ML Pipeline & Fairness Audit
 
-## Overview
-This repository contains the complete research and implementation for the project **"Establishing a Reproducible Predictive Architecture for Customer Churn in Subscription Services"**, developed for the Research Methods and Scientific Integrity course at UNMSM.
-
+**UNMSM – Doctoral Program in Deep Technologies**  
+**Course:** Research Methods & Scientific Integrity in AI  
 **Author:** Valerio Gomez  
-**Affiliation:** Universidad Nacional Mayor de San Marcos (UNMSM)  
+**Instructor:** Dr. Loveleen Gaur
+
+## Project Title
+**"A Reproducible and Fairness-Aware Machine Learning Pipeline for Customer Churn Prediction in a Subscription Service"**
+
+## Project Description
+This repository contains a fully reproducible machine learning pipeline for predicting customer churn in a subscription service. It compares five classifiers (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and SVM), selects the best by recall, and includes a fairness audit for gender bias. The stack includes Git, DVC, MLflow, and Docker to ensure anyone can reproduce the results with a single command.
+
+## Quick Start (Stranger Test)
+```bash
+git clone https://github.com/ValerioGomez/unmsm-research-methods-valeriogomez.git
+cd unmsm-research-methods-valeriogomez
+dvc pull
+docker build -t churn-project .
+docker run -it --rm -p 8888:8888 -v $(pwd):/project churn-project jupyter lab --ip=0.0.0.0 --allow-root
+```
+Then open the notebook in `05_pipeline/notebook.ipynb` and run all cells.
 
 ---
 
-## Repository Index and Status (Up to Session 07)
+## Repository Index
 
-This directory structure indexes the active research components. Clicking on each link will navigate to the corresponding document or code asset.
-
-### 🔬 Session 01: Paradigm
-* [Paradigm Justification](01_paradigm/paradigm_justification.md) - Theoretical and philosophical justification of the research paradigm (Ontology, Epistemology, and Methodology).
-
-### 📊 Session 02: Method
-* [Method Fit Matrix](02_method/method_fit_matrix.md) - Analysis of methodological alignment with research questions and objective.
-
-### 📋 Sessions 03, 13, 15: Protocol
-* [Protocol v0.1 (Initial)](03_protocol/protocol_v0.1.md) - Initial draft of the research protocol.
-* [Protocol v1.0 (Mid-term)](03_protocol/protocol_v1.0.md) - Refined protocol incorporating design and data collection strategies.
-* [Protocol v2.0 (Final)](03_protocol/protocol_v2.0.md) - Finalized protocol with analytical plan and scheduling.
-
-### 📚 Session 04: Literature
-* [Systematic Review](04_literature/systematic_review.md) - Systematic search strategy and preliminary literature mapping.
-* [PRISMA Flow Diagram](04_literature/prisma_diagram.png) - Visual representation of search exclusions.
-* [Gap Analysis](04_literature/gap_analysis.md) - Identification of research gaps in current customer churn models.
-
-### ⚙️ Session 05: Pipeline
-* [Reproducible Training Notebook](05_pipeline/notebook.ipynb) - Jupyter Notebook executing data preprocessing and model evaluation.
-
-### 🔍 Session 06: Reproducibility Audit
-* [Reproducibility Audit](06_repro_audit/reproducibility_audit.md) - Technical audit evaluating the reproducibility of an external ML paper.
-
-### 🏷️ Session 07: Documentation Standards
-* [Model Card](07_model_card/model_card.md) - Standardized reporting on the trained classification model (Mitchell et al., 2019).
-* [Datasheet](07_model_card/datasheet.md) - Detailed documentation of dataset metadata, collection, and bias checks (Gebru et al., 2021).
-
-### ⚖️ Session 09: Ethics
-* [Ethics Protocol](09_ethics/ethics_protocol.md) - *(Pending / Empty)*
-
-### 🗄️ Session 10: Data Management
-* [Data Management Plan](10_data_mgmt/data_management_plan.md) - *(Pending / Empty)*
-
-### 🛡️ Session 11: Bias Audit
-* [Bias Audit Report](11_bias_audit/bias_audit_report.md) - *(Pending / Empty)*
-
-### 🏛️ Session 12: Integrity
-* [Retracted Paper Analysis](12_integrity/retracted_paper_analysis.md) - *(Pending / Empty)*
-* [AI Use Policy](12_integrity/ai_use_policy.md) - *(Pending / Empty)*
-
-### 📝 Reflections
-* [Reflective Log](reflections/reflective_log.md) - Course journal structured using Rolfe's *What? So What? Now What?* framework.
+| Session | Document | Status |
+|---------|----------|--------|
+| 01 | [Paradigm Justification](01_paradigm/paradigm_justification.md) | ✅ Active |
+| 02 | [Method Fit Matrix](02_method/method_fit_matrix.md) | ✅ Active |
+| 03 | [Protocol v0.1](03_protocol/protocol_v0.1.md) | ✅ Active |
+| 03 | [Protocol v1.0](03_protocol/protocol_v1.0.md) | ✅ Active |
+| 03 | [Protocol v2.0](03_protocol/protocol_v2.0.md) | ✅ Active |
+| 04 | [Systematic Review](04_literature/systematic_review.md) | ✅ Active |
+| 04 | [Gap Analysis](04_literature/gap_analysis.md) | ✅ Active |
+| 04 | [PRISMA Diagram](04_literature/prisma_diagram.png) | ✅ Placeholder |
+| 05 | [Pipeline Notebook](05_pipeline/notebook.ipynb) | ✅ Active |
+| 06 | [Reproducibility Audit](06_repro_audit/reproducibility_audit.md) | ✅ Active |
+| 07 | [Model Card](07_model_card/model_card.md) | ✅ Active |
+| 07 | [Datasheet](07_model_card/datasheet.md) | ✅ Active |
+| 09 | [Ethics Protocol](09_ethics/ethics_protocol.md) | ⏳ Pending |
+| 10 | [Data Management Plan](10_data_mgmt/data_management_plan.md) | ⏳ Pending |
+| 11 | [Bias Audit Report](11_bias_audit/bias_audit_report.md) | ⏳ Pending |
+| 12 | [Retracted Paper Analysis](12_integrity/retracted_paper_analysis.md) | ⏳ Pending |
+| 12 | [AI Use Policy](12_integrity/ai_use_policy.md) | ⏳ Pending |
+| – | [Reflective Log](reflections/reflective_log.md) | ✅ Active |
 
 ---
 
-## Environment & Replication Instructions
+## Reproducibility Stack
 
-To replicate the environment and ensure reproducibility, refer to the following instructions:
+| Tool | Purpose |
+|------|---------|
+| **Git** | Full version history of code and documents |
+| **DVC** | Dataset version control and remote storage |
+| **MLflow** | Experiment tracking (metrics, parameters, models) |
+| **Docker** | Containerized, frozen environment |
+| **`requirements.txt`** | Pinned Python dependencies |
+| **`SEED=42`** | Fixed random seed for all libraries |
 
-### Prerequisites
-- Install [Docker](https://docs.docker.com/) on your local machine.
+---
 
-### Environment Setup
-1. Build the Docker container:
-   ```bash
-   docker build -t unmsm-research-env .
-   ```
-2. Run the environment interactively:
-   ```bash
-   docker run -it --rm -v "$(pwd):/app" unmsm-research-env
-   ```
+## Research Question
+*Which supervised classification algorithm maximizes recall for churn prediction on the subscription dataset, and does the best model exhibit gender-based performance disparities?*
