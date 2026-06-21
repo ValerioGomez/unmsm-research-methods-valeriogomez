@@ -1,0 +1,18 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+ENV/
+
+# MLflow experiments tracking outputs
+mlruns/
+
+# DVC local files and caches
+.dvc/config.local
+.dvc/tmp/
+.dvc/cache/
