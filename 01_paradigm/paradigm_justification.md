@@ -1,4 +1,4 @@
-# Paradigm Justification: Growth Habit Classification of Amazonian Medicinal Plants
+# Paradigm Justification: Growth Habit Classification of Peruvian Amazonian Medicinal Plants
 
 **UNMSM – Doctoral Program in Deep Technologies**  
 **Course:** Research Methods & Scientific Integrity in AI  

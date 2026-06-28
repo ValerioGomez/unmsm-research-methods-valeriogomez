@@ -1,4 +1,4 @@
-# Research Protocol v0.1: Growth Habit Classification of Amazonian Medicinal Plants
+# Research Protocol v0.1: Growth Habit Classification of Peruvian Amazonian Medicinal Plants
 
 **UNMSM – Doctoral Program in Deep Technologies**  
 **Course:** Research Methods & Scientific Integrity in AI  
@@ -8,7 +8,7 @@
 ---
 
 ## 1. Project Title
-**Growth Habit Classification of Amazonian Medicinal Plants using Machine Learning**
+**Growth Habit Classification of Peruvian Amazonian Medicinal Plants using Machine Learning**
 
 ---
 

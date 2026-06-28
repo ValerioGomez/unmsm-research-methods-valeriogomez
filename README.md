@@ -1,4 +1,4 @@
-# Growth Habit Classification of Amazonian Medicinal Plants
+# Growth Habit Classification of Peruvian Amazonian Medicinal Plants
 
 **UNMSM – Doctoral Program in Deep Technologies**  
 **Course:** Research Methods & Scientific Integrity in AI  
@@ -6,7 +6,7 @@
 **Instructor:** Dr. Loveleen Gaur
 
 ## Project Title
-**"Growth Habit Classification of Amazonian Medicinal Plants using Machine Learning Ensembles"**
+**"Growth Habit Classification of Peruvian Amazonian Medicinal Plants using Machine Learning Ensembles"**
 
 ## Project Description
 This repository contains a reproducible machine learning pipeline designed to predict the growth habit (Tree, Shrub, Herb, Liana) of medicinal plants in the Peruvian Amazon using the database compiled by the Instituto de Investigaciones de la Amazonía Peruana (IIAP). The project compares three classifiers (Multinomial Logistic Regression, Random Forest, and XGBoost) and incorporates etnobotanical text features (uses) via TF-IDF vectorization alongside taxonomic and geographic metadata. The stack utilizes Git, DVC, MLflow, and Docker to ensure full transparency and reproducibility, in compliance with the Nagoya Protocol.
