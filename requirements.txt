@@ -1,6 +1,10 @@
-# Versiones pineadas del Tech Guide
+# Pinned versions of the reproducibility and machine learning stack
 dvc==3.42.0
+dvc-gdrive==3.0.1
 mlflow==2.11.1
 jupyterlab==4.1.2
 pandas==2.2.1
+numpy==1.26.4
 scikit-learn==1.4.1.post1
+xgboost==2.0.3
+openpyxl==3.1.2
