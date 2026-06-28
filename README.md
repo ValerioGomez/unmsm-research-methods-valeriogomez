@@ -13,8 +13,8 @@
 
 ## Quick Start (Stranger Test)
 ```bash
-git clone https://github.com/ValerioGomez/unmsm-research-methods-valeriogomez.git
-cd unmsm-research-methods-valeriogomez
+git clone https://github.com/ValerioGomez/unmsm-research-methods-valerio_gomez.git
+cd unmsm-research-methods-valerio_gomez
 docker build -t research-project .
 docker run -it --rm -p 8888:8888 -v $(pwd):/project research-project jupyter lab --ip=0.0.0.0 --allow-root
 ```
