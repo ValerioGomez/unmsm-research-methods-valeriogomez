@@ -137,14 +137,14 @@ docker run -it --rm -p 8888:8888 -v "$(pwd):/project" unmsm-project jupyter lab 
 | **Session 4** | [Systematic Review](04_literature/systematic_review.md) & [PRISMA Flowchart](04_literature/prisma_diagram.png) | ✅ Active |
 | **Session 4** | [Gap Analysis Matrix](04_literature/gap_analysis.md) | ✅ Active |
 | **Session 4** | [Selected Reference Summaries](04_literature/selected_references.md) | ✅ Active |
-| **Session 5** | Reproducible ML Pipeline (DVC & MLflow) | ⏳ Pending |
-| **Session 6** | Published ML Paper Reproducibility Audit | ⏳ Pending |
-| **Session 7** | Model Card & Dataset Datasheet | ⏳ Pending |
-| **Session 9** | Belmont Principles Ethics Protocol | ⏳ Pending |
-| **Session 10** | FAIR Data Management Plan | ⏳ Pending |
-| **Session 11** | Bias Audit Report (AIF360/Fairlearn) | ⏳ Pending |
-| **Session 12** | Personal AI Use Policy & Retracted Paper Analysis | ⏳ Pending |
-| **Session 13** | Complete Research Protocol v1.0 | ⏳ Pending |
+| **Session 5** | [Reproducible ML Pipeline](05_pipeline/notebook.ipynb) (DVC & MLflow) | ✅ Active |
+| **Session 6** | [Published ML Paper Reproducibility Audit](06_repro_audit/reproducibility_audit.md) | ✅ Active |
+| **Session 7** | [Model Card](07_model_card/model_card.md) & [Dataset Datasheet](07_model_card/datasheet.md) | ✅ Active |
+| **Session 9** | [Belmont Principles Ethics Protocol](09_ethics/ethics_protocol.md) | ✅ Active |
+| **Session 10** | [FAIR Data Management Plan](10_data_mgmt/data_management_plan.md) | ✅ Active |
+| **Session 11** | [Bias Audit Report](11_bias_audit/bias_audit_report.md) (AIF360/Fairlearn) | ✅ Active |
+| **Session 12** | [Personal AI Use Policy](12_integrity/ai_use_policy.md) & [Retracted Paper Analysis](12_integrity/retracted_paper_analysis.md) | ✅ Active |
+| **Session 13** | [Complete Research Protocol v1.0](03_protocol/protocol_v1.0.md) | ✅ Active |
 | **Session 14** | Peer Reviews | ⏳ Pending |
-| **Session 15** | Final Protocol v2.0 & Response Table | ⏳ Pending |
-| **Reflections** | [Unit I Reflective Log](reflections/reflective_log.md) | ✅ Active |
+| **Session 15** | [Final Protocol v2.0 & Response Table](03_protocol/protocol_v2.0.md) | ✅ Active |
+| **Reflections** | [Unit I & II Reflective Log](reflections/reflective_log.md) | ✅ Active |
