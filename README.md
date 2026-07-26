@@ -145,6 +145,6 @@ docker run -it --rm -p 8888:8888 -v "$(pwd):/project" unmsm-project jupyter lab 
 | **Session 11** | [Bias Audit Report](11_bias_audit/bias_audit_report.md) (AIF360/Fairlearn) | ✅ Active |
 | **Session 12** | [Personal AI Use Policy](12_integrity/ai_use_policy.md) & [Retracted Paper Analysis](12_integrity/retracted_paper_analysis.md) | ✅ Active |
 | **Session 13** | [Complete Research Protocol v1.0](03_protocol/protocol_v1.0.md) | ✅ Active |
-| **Session 14** | Peer Reviews | ⏳ Pending |
+| **Session 14** | [Peer Review Summary](14_peer_review/peer_review_summary.md) ([Review 1](14_peer_review/peer_reviews/peer_review_1.md), [Review 2](14_peer_review/peer_reviews/peer_review_2.md), [Review 3](14_peer_review/peer_reviews/peer_review_3.md)) | ✅ Active |
 | **Session 15** | [Final Protocol v2.0 & Response Table](03_protocol/protocol_v2.0.md) | ✅ Active |
 | **Reflections** | [Unit I & II Reflective Log](reflections/reflective_log.md) | ✅ Active |
