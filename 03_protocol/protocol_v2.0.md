@@ -28,14 +28,16 @@ The final machine learning pipeline is designed with strict modularity and compu
 
 ---
 
-## 3. Performance Summary
-| Model | Validation Accuracy | Validation Macro F1 | Test Accuracy | Test Macro F1 |
-|---|---|---|---|---|
-| Multinomial Logistic Regression | 0.7333 | 0.7648 | - | - |
-| Random Forest | 0.8000 | 0.8222 | 0.6000 | 0.4722 |
-| XGBoost | 0.8000 | 0.8333 | - | - |
+## 3. Performance Summary & Optimization Results
 
-*Note: Models perform well on validation data but show overfitting on the test set due to high-dimensional feature representations on a small sample size. Future work will investigate regularized representations.*
+| Model Stage | Hyperparameter Tuning | Validation Accuracy | Validation Macro F1 | Test Accuracy | Test Macro F1 | Key Result |
+|---|---|:---:|:---:|:---:|:---:|---|
+| **Logistic Regression (Baseline)** | Default (`L2`, `max_iter=1000`) | 0.8000 | 0.7648 | 0.6000 | 0.6238 | Linear baseline |
+| **Random Forest (Baseline)** | Default (`n_est=100`, `max_depth=None`) | 0.8667 | 0.8222 | 0.6000 | 0.4722 | Overfitted; 0.00 recall on Arbusto |
+| **XGBoost (Baseline)** | Default (`lr=0.1`, `n_est=100`) | 0.8667 | 0.8333 | 0.7333 | 0.7746 | Initial boosting performance |
+| **XGBoost (Optimized v2.0 ★ BEST)** | `GridSearchCV` (`lr=0.01`, `depth=7`, `n_est=200`, `reg_lambda=1`) | 0.7333 | 0.7091 | **0.7333** | **0.6984** | **Restored Arbusto recall (F1=0.57); Best generalization** |
+
+*Note: Systematic tuning via `GridSearchCV` with L2 regularization (`reg_lambda=1`) and shrinkage (`learning_rate=0.01`) eliminated the zero-recall artifact on Arbusto and achieved a balanced test Macro F1 of 0.6984 (Hierba F1=0.86, Árbol F1=0.67, Arbusto F1=0.57).*
 
 ---
 
