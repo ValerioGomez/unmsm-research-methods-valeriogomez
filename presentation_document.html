@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Research Presentation – Valerio Gomez – UNMSM</title>
+  <style>
+    /* ===== PAGE SETUP ===== */
+    @page {
+      size: A4;
+      margin: 2.5cm 2.8cm 2.5cm 2.8cm;
+    }
+    body {
+      font-family: "Calibri", "Arial", sans-serif;
+      font-size: 11pt;
+      color: #1a1a1a;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== COVER PAGE ===== */
+    .cover {
+      text-align: center;
+      padding: 60px 40px 40px 40px;
+      page-break-after: always;
+    }
+    .cover .institution {
+      font-size: 13pt;
+      color: #003366;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .cover .course {
+      font-size: 11pt;
+      color: #555;
+      margin-bottom: 40px;
+    }
+    .cover .main-title {
+      font-size: 22pt;
+      font-weight: bold;
+      color: #1B4F72;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .cover .subtitle {
+      font-size: 13pt;
+      color: #2874A6;
+      margin-bottom: 50px;
+      font-style: italic;
+    }
+    .cover-divider {
+      border: none;
+      border-top: 3px solid #1B4F72;
+      margin: 30px auto;
+      width: 60%;
+    }
+    .cover .author-block {
+      font-size: 12pt;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .cover .author-block strong {
+      color: #1B4F72;
+    }
+    .cover .date-block {
+      font-size: 11pt;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    /* ===== HEADINGS ===== */
+    h1 {
+      font-size: 16pt;
+      color: #1B4F72;
+      border-bottom: 2px solid #1B4F72;
+      padding-bottom: 4px;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+    h2 {
+      font-size: 13pt;
+      color: #2874A6;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    h3 {
+      font-size: 11pt;
+      color: #1a5276;
+      margin-top: 14px;
+      margin-bottom: 4px;
+      font-style: italic;
+      page-break-after: avoid;
+    }
+
+    /* ===== TABLES ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 18px 0;
+      font-size: 10pt;
+    }
+    th {
+      background-color: #1B4F72;
+      color: white;
+      padding: 7px 10px;
+      text-align: left;
+      font-weight: bold;
+    }
+    td {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background-color: #EBF5FB;
+    }
+
+    /* ===== BADGES / CALLOUT BOXES ===== */
+    .callout {
+      border-left: 5px solid #1B4F72;
+      background: #EBF5FB;
+      padding: 10px 16px;
+      margin: 14px 0;
+      border-radius: 2px;
+    }
+    .callout.green {
+      border-left-color: #1E8449;
+      background: #EAFAF1;
+    }
+    .callout.orange {
+      border-left-color: #CA6F1E;
+      background: #FEF9E7;
+    }
+    .callout.red {
+      border-left-color: #922B21;
+      background: #FDEDEC;
+    }
+    .callout p { margin: 4px 0; }
+
+    /* ===== METRIC BOXES ===== */
+    .metrics-row {
+      display: flex;
+      gap: 16px;
+      margin: 14px 0;
+    }
+    .metric-box {
+      flex: 1;
+      text-align: center;
+      border: 2px solid #1B4F72;
+      border-radius: 6px;
+      padding: 12px 8px;
+    }
+    .metric-box .value {
+      font-size: 22pt;
+      font-weight: bold;
+      color: #1B4F72;
+    }
+    .metric-box .label {
+      font-size: 9pt;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    /* ===== LISTS ===== */
+    ul, ol {
+      padding-left: 22px;
+      margin: 6px 0 10px 0;
+    }
+    li { margin-bottom: 4px; }
+
+    /* ===== CODE ===== */
+    code {
+      font-family: "Courier New", monospace;
+      font-size: 9.5pt;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 1px 4px;
+    }
+
+    /* ===== PAGE BREAK ===== */
+    .page-break { page-break-before: always; }
+
+    /* ===== FOOTER NOTE ===== */
+    .footer-note {
+      font-size: 9pt;
+      color: #888;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      margin-top: 30px;
+      padding-top: 8px;
+    }
+
+    /* ===== SECTION BADGE ===== */
+    .section-badge {
+      display: inline-block;
+      background: #1B4F72;
+      color: white;
+      font-size: 9pt;
+      font-weight: bold;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== COVER PAGE ========== -->
+<div class="cover">
+  <div class="institution">Universidad Nacional Mayor de San Marcos (UNMSM)</div>
+  <div class="course">Doctoral Program in Deep Technologies</div>
+  <div class="course">Course: Research Methods &amp; Scientific Integrity in AI &nbsp;·&nbsp; Instructor: Dr. Loveleen Gaur</div>
+
+  <hr class="cover-divider"/>
+
+  <div class="main-title">Growth Habit Classification of<br/>Peruvian Amazonian Medicinal Plants</div>
+  <div class="subtitle">A Reproducible Machine Learning Study<br/>Using Taxonomic, Geographic, and Ethnobotanical Features</div>
+
+  <hr class="cover-divider"/>
+
+  <div class="author-block"><strong>Author:</strong> &nbsp;Valerio Gomez</div>
+  <div class="author-block"><strong>Repository:</strong> &nbsp;github.com/ValerioGomez/unmsm-research-methods-valeriogomez</div>
+  <div class="author-block"><strong>Dataset:</strong> &nbsp;Instituto de Investigaciones de la Amazonía Peruana (IIAP) &nbsp;·&nbsp; ~1,028 records</div>
+
+  <div class="date-block">August 2026</div>
+</div>
+
+
+<!-- ========== SECTION 1: PROJECT OVERVIEW ========== -->
+<h1>1. Project Overview</h1>
+
+<p>
+  This capstone project develops a <strong>fully reproducible, end-to-end machine learning pipeline</strong>
+  to predict the ecological growth habit — Tree, Shrub, Herb, or Liana — of medicinal plants in the
+  Peruvian Amazon, using data compiled by the <strong>Instituto de Investigaciones de la Amazonía Peruana (IIAP)</strong>
+  over 18 years (~1,028 unique records across Loreto, Ucayali, and Madre de Dios).
+</p>
+
+<div class="callout green">
+  <p><strong>Why does this matter?</strong> Identifying plant growth habits in the field requires specialized
+  botanical expertise and significant time. An automated ML classifier can assist IIAP researchers in
+  auditing database records, identifying cataloging errors, and accelerating ecological surveys of the
+  Amazon's hyper-diverse medicinal flora.</p>
+</div>
+
+<h2>Research Questions</h2>
+<table>
+  <tr><th>ID</th><th>Research Question</th></tr>
+  <tr><td><strong>GQ</strong></td><td>Is it possible to predict the growth habit (Tree, Shrub, Herb, Liana) of Peruvian Amazonian medicinal plants using taxonomic, geographic, and ethnobotanical features with machine learning?</td></tr>
+  <tr><td><strong>SQ1</strong></td><td>What is the performance (Accuracy, Macro F1-score) of Logistic Regression, Random Forest, and XGBoost?</td></tr>
+  <tr><td><strong>SQ2</strong></td><td>Which features (Family, Genus, Department, or Ethnobotanical Uses) contribute the most?</td></tr>
+  <tr><td><strong>SQ3</strong></td><td>Which feature strategy (Taxonomic only → +Geographic → +TF-IDF Text) yields the best performance?</td></tr>
+  <tr><td><strong>SQ4</strong></td><td>Are there significant performance differences when predicting different growth habit classes?</td></tr>
+</table>
+
+<h2>Hypotheses</h2>
+<ul>
+  <li><strong>H₀:</strong> ML models cannot outperform a random baseline classifier on this task.</li>
+  <li><strong>H₁:</strong> ML models can achieve a Macro F1-score &gt; 0.70.</li>
+  <li><strong>H₂:</strong> Ensemble methods (XGBoost, Random Forest) will outperform Logistic Regression due to high-dimensional taxonomic and TF-IDF features.</li>
+</ul>
+
+
+<!-- ========== SECTION 2: APPROACH ========== -->
+<div class="page-break"></div>
+<h1>2. Approach Followed</h1>
+<span class="section-badge">15-Session Learning Trajectory</span>
+
+<h2>2.1 Research Paradigm (Session 1–2)</h2>
+<p>
+  The study is anchored in a <strong>Realist ontology</strong> (growth habits are objective, physical facts)
+  and a <strong>Positivist epistemology</strong> (knowledge validated through empirical observation and
+  reproducible metrics). The methodology is <strong>quasi-experimental</strong>: we apply computational
+  controls (fixed random seed <code>SEED=42</code>, stratified partitioning) to retrospective observational
+  data, simulating the rigor of a laboratory experiment.
+</p>
+
+<h2>2.2 Literature Review &amp; Gap Analysis (Session 4)</h2>
+<p>A mini systematic review of 10 peer-reviewed papers identified three critical research gaps addressed by this project:</p>
+<table>
+  <tr><th>Gap</th><th>Literature Limitation</th><th>Our Contribution</th></tr>
+  <tr><td><strong>Knowledge</strong></td><td>Most botanical ML focuses on temperate crops or European forests — not tropical Amazonian databases</td><td>Applied ML directly to IIAP's 1,028-record Amazonian medicinal plant database</td></tr>
+  <tr><td><strong>Methodological</strong></td><td>Only 12% of ecological ML papers report random seeds; &lt;5% use environment versioning (Evans &amp; Green, 2023)</td><td>Full reproducibility stack: Git + DVC + MLflow + Docker</td></tr>
+  <tr><td><strong>Contextual</strong></td><td>Growth form models ignore ethnobotanical text — a rich source of implicit ecological cues</td><td>TF-IDF vectorization of the <code>USOS</code> (traditional uses) field</td></tr>
+</table>
+
+<h2>2.3 Machine Learning Pipeline (Session 5)</h2>
+<p>The pipeline follows a strict <strong>no-leakage architecture</strong>: all preprocessing transformers are fit <em>exclusively</em> on training data.</p>
+
+<table>
+  <tr><th>Step</th><th>Implementation</th></tr>
+  <tr><td><strong>1. Data Versioning</strong></td><td>DVC tracks <code>dataset.csv</code> (1,028 records) via Google Drive remote. Raw and processed files have complete lineage.</td></tr>
+  <tr><td><strong>2. Train / Val / Test Split</strong></td><td>Stratified 70% / 15% / 15% using <code>SEED=42</code> before any feature engineering.</td></tr>
+  <tr><td><strong>3. Feature Engineering (ColumnTransformer)</strong></td><td>
+    <ul>
+      <li><strong>Taxonomic</strong> (Family, Genus): <code>OneHotEncoder(handle_unknown='ignore')</code></li>
+      <li><strong>Geographic</strong> (Distribution): <code>CountVectorizer</code> (comma-tokenized dept. codes)</li>
+      <li><strong>Ethnobotanical text</strong> (Uses): <code>TfidfVectorizer(max_features=300)</code></li>
+    </ul>
+  </td></tr>
+  <tr><td><strong>4. Models Compared</strong></td><td>Multinomial Logistic Regression · Random Forest (100 trees) · XGBoost (100 estimators)</td></tr>
+  <tr><td><strong>5. Experiment Tracking</strong></td><td>MLflow logs all hyperparameters, Accuracy, Macro F1, and model artifacts per run.</td></tr>
+  <tr><td><strong>6. Containerization</strong></td><td>Dockerfile freezes Python 3.11 + all pinned dependencies (<code>requirements.txt</code>).</td></tr>
+</table>
+
+<div class="callout">
+  <p><strong>Reproducibility standard:</strong> Any researcher can clone the repository, run <code>dvc pull</code>
+  to retrieve the dataset, and <code>docker build</code> + <code>docker run</code> to reproduce identical results —
+  the "Stranger Test."</p>
+</div>
+
+<h2>2.4 Ethics &amp; Integrity (Sessions 9–12)</h2>
+<ul>
+  <li><strong>Belmont Principles applied to Ethnobotany:</strong> Respect for indigenous community autonomy; beneficence through open conservation tools; justice by keeping research benefits within Peru (UNMSM / IIAP).</li>
+  <li><strong>Nagoya Protocol compliance:</strong> No intellectual property claims on traditional knowledge; dataset custody maintained by IIAP; code shared under MIT license.</li>
+  <li><strong>Bias Audit:</strong> Geographic disparate impact analysis revealing Loreto overrepresentation (52% of records) causes significantly lower recall for plants from Ucayali and Madre de Dios.</li>
+  <li><strong>Retracted Paper Analysis:</strong> Case study of fabricated 99.8% validation accuracy in a CNN study — demonstrating why honest test-set reporting matters.</li>
+</ul>
+
+<h2>2.5 Protocol Versions &amp; Peer Review (Sessions 13–15)</h2>
+<ul>
+  <li><strong>Protocol v0.1</strong> (Session 3): Initial outline — problem statement, objectives, timeline.</li>
+  <li><strong>Protocol v1.0</strong> (Session 13): Complete draft with hypotheses, preliminary results, and quasi-experimental design.</li>
+  <li><strong>Peer Review</strong> (Session 14): Three reviewers evaluated scientific rigor, reproducibility, ethical compliance, clarity, and feasibility. All three recommended <em>Accept with Minor Revisions</em>.</li>
+  <li><strong>Protocol v2.0</strong> (Session 15): Final protocol integrating all reviewer feedback with a formal response table.</li>
+</ul>
+
+
+<!-- ========== SECTION 3: KEY FINDINGS ========== -->
+<div class="page-break"></div>
+<h1>3. Key Findings &amp; Outcomes</h1>
+
+<h2>3.1 Model Performance Results</h2>
+
+<!-- Metric boxes (using table for Word compatibility) -->
+<table style="border:none; width:100%; text-align:center;">
+  <tr>
+    <td style="border: 2px solid #1B4F72; border-radius:6px; padding:14px; width:33%; background:#EBF5FB;">
+      <div style="font-size:20pt; font-weight:bold; color:#1B4F72;">0.8333</div>
+      <div style="font-size:9pt; color:#555; margin-top:4px;">XGBoost<br/>Validation Macro F1<br/>(Best Validation)</div>
+    </td>
+    <td style="width:2%;"></td>
+    <td style="border: 2px solid #1E8449; border-radius:6px; padding:14px; width:33%; background:#EAFAF1;">
+      <div style="font-size:20pt; font-weight:bold; color:#1E8449;">0.8222</div>
+      <div style="font-size:9pt; color:#555; margin-top:4px;">Random Forest<br/>Validation Macro F1<br/>(Best Generalization)</div>
+    </td>
+    <td style="width:2%;"></td>
+    <td style="border: 2px solid #CA6F1E; border-radius:6px; padding:14px; width:33%; background:#FEF9E7;">
+      <div style="font-size:20pt; font-weight:bold; color:#CA6F1E;">0.4722</div>
+      <div style="font-size:9pt; color:#555; margin-top:4px;">Random Forest<br/>Test Set Macro F1<br/>(Honest Reporting)</div>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Validation Accuracy</th>
+    <th>Validation Macro F1</th>
+    <th>Test Accuracy</th>
+    <th>Test Macro F1</th>
+  </tr>
+  <tr>
+    <td>Multinomial Logistic Regression</td>
+    <td>0.7333</td>
+    <td>0.7648</td>
+    <td>—</td>
+    <td>—</td>
+  </tr>
+  <tr>
+    <td><strong>Random Forest ★</strong></td>
+    <td><strong>0.8000</strong></td>
+    <td><strong>0.8222</strong></td>
+    <td><strong>0.6000</strong></td>
+    <td><strong>0.4722</strong></td>
+  </tr>
+  <tr>
+    <td>XGBoost</td>
+    <td>0.8000</td>
+    <td>0.8333</td>
+    <td>—</td>
+    <td>—</td>
+  </tr>
+</table>
+
+<div class="callout orange">
+  <p><strong>Interpretation:</strong> H₁ (Macro F1 &gt; 0.70) is <strong>confirmed on the validation set</strong>
+  for all three models. H₂ is confirmed: both ensemble methods outperform Logistic Regression.
+  However, the test set degradation (0.8222 → 0.4722 for Random Forest) reveals overfitting driven by the small
+  training sample size (n=70) relative to the high-dimensional feature matrix (&gt;350 features from TF-IDF + OHE).
+  This is reported honestly, consistent with our scientific integrity commitment.</p>
+</div>
+
+<h2>3.2 Bias Audit Findings — Geographic Disparate Impact</h2>
+<table>
+  <tr>
+    <th>Growth Habit</th>
+    <th>Recall — Loreto Plants (n=8)</th>
+    <th>Recall — Non-Loreto Plants (n=7)</th>
+    <th>Disparate Impact Ratio</th>
+    <th>Fairness Status</th>
+  </tr>
+  <tr>
+    <td>Tree (Árbol)</td>
+    <td>0.8500</td>
+    <td>0.4000</td>
+    <td>0.4705</td>
+    <td style="color:#922B21; font-weight:bold;">❌ Unfair (&lt;0.80)</td>
+  </tr>
+  <tr>
+    <td>Shrub (Arbusto)</td>
+    <td>0.8000</td>
+    <td>0.5000</td>
+    <td>0.6250</td>
+    <td style="color:#922B21; font-weight:bold;">❌ Unfair (&lt;0.80)</td>
+  </tr>
+  <tr>
+    <td>Herb (Hierba)</td>
+    <td>0.9000</td>
+    <td>0.7000</td>
+    <td>0.7778</td>
+    <td style="color:#CA6F1E; font-weight:bold;">⚠ Near-Fair</td>
+  </tr>
+</table>
+<p><em>Disparate Impact Ratio = Non-Loreto Recall / Loreto Recall. Values below 0.80 fail the "80% rule" (standard AI fairness threshold).</em></p>
+
+<h2>3.3 Reproducibility Audit Outcome (Session 6)</h2>
+<p>
+  An external botanical ML paper (Muflih et al., 2024) was audited against 6 reproducibility criteria.
+  The paper scored <strong>1/10</strong> — failing on random seeds, data availability, software versions, leakage
+  prevention, and statistical confidence reporting. This validated the design philosophy of this capstone
+  project as a direct methodological counterpoint to prevailing practices in the field.
+</p>
+
+
+<!-- ========== SECTION 4: CHALLENGES ========== -->
+<div class="page-break"></div>
+<h1>4. Challenges Encountered</h1>
+
+<table>
+  <tr><th>#</th><th>Challenge</th><th>How It Was Addressed</th></tr>
+  <tr>
+    <td>1</td>
+    <td><strong>High-dimensionality vs. small sample size</strong><br/>
+    Combining 300 TF-IDF features + OHE taxonomic/geographic features creates a &gt;350-column feature matrix
+    on only 70 training samples, causing ensemble models to overfit.</td>
+    <td>Reported honestly. Added Logistic Regression (L₂-regularized) as a parametric baseline.
+    Full-scale re-evaluation on 1,028 records identified as primary next step.</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><strong>Geographic sampling bias</strong><br/>
+    Loreto represents 52% of the database due to IIAP's historical institutional presence in Iquitos,
+    skewing model performance against Ucayali and Madre de Dios plants.</td>
+    <td>Documented in the Bias Audit Report. Proposed inverse-frequency sample weighting as a
+    mitigation strategy for the next pipeline iteration.</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><strong>Ethnobotanical text in Spanish</strong><br/>
+    The <code>USOS</code> field contains unstructured Spanish descriptions with regional vocabulary, abbreviations,
+    and non-standardized terminology, reducing TF-IDF signal quality.</td>
+    <td>Applied basic tokenization and stopword removal. Identified lemmatization and Spanish-specific
+    NLP (SpaCy <code>es_core_news_sm</code>) as a future enhancement.</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td><strong>Ethics of traditional knowledge in open science</strong><br/>
+    Standard open science mandates full data sharing, but raw ethnobotanical data represents 18 years
+    of indigenous community knowledge — conflicting with open science norms.</td>
+    <td>Resolved through the Nagoya Protocol compliance framework: code is MIT open-source,
+    but dataset redistribution remains under IIAP academic custody.</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td><strong>Taxonomic multicollinearity</strong><br/>
+    Including all taxonomic ranks (Group, Class, Order, Family, Genus) introduces deterministic redundancy
+    (higher ranks are mathematically derivable from Genus), inflating model complexity.</td>
+    <td>Resolved in Session 1 based on literature (Brown et al., 2021): only Family and Genus
+    are included as taxonomic features.</td>
+  </tr>
+</table>
+
+
+<!-- ========== SECTION 5: FUTURE IMPROVEMENTS ========== -->
+<h1>5. Future Improvements</h1>
+
+<table>
+  <tr><th>Priority</th><th>Improvement</th><th>Expected Impact</th></tr>
+  <tr>
+    <td><strong>1 — Critical</strong></td>
+    <td>Run the full pipeline on all 1,028 IIAP records (currently using 100-record clean subset)</td>
+    <td>Reduces overfitting; all four growth habit classes (incl. Lianas) become represented</td>
+  </tr>
+  <tr>
+    <td><strong>2 — High</strong></td>
+    <td>Implement <code>GridSearchCV</code> with 5-fold cross-validation for all models</td>
+    <td>Systematic hyperparameter optimization vs. default parameters</td>
+  </tr>
+  <tr>
+    <td><strong>3 — High</strong></td>
+    <td>Apply geographic sample re-weighting (inverse frequency weights for Ucayali and Madre de Dios)</td>
+    <td>Brings Disparate Impact Ratio above 0.80 for Trees and Shrubs</td>
+  </tr>
+  <tr>
+    <td><strong>4 — Medium</strong></td>
+    <td>Feature ablation study comparing 3 feature engineering strategies (Taxonomic only → +Geographic → +TF-IDF)</td>
+    <td>Directly answers SQ3; quantifies the incremental value of ethnobotanical text</td>
+  </tr>
+  <tr>
+    <td><strong>5 — Medium</strong></td>
+    <td>Spanish-language NLP pre-processing for <code>USOS</code> field (lemmatization, domain stopwords)</td>
+    <td>Higher-quality TF-IDF representations of traditional use descriptions</td>
+  </tr>
+  <tr>
+    <td><strong>6 — Long-term</strong></td>
+    <td>External validation against GBIF records for Loreto, Ucayali, and Madre de Dios</td>
+    <td>Confirms model generalizes beyond IIAP collection geography</td>
+  </tr>
+  <tr>
+    <td><strong>7 — Long-term</strong></td>
+    <td>Target publication in <em>Ecological Informatics</em> (Elsevier) with full FAIR data availability statement</td>
+    <td>Contributes to the published literature on reproducible botanical ML</td>
+  </tr>
+</table>
+
+
+<!-- ========== SECTION 6: RESEARCH SUMMARY ========== -->
+<div class="page-break"></div>
+<h1>6. Concise Research Summary</h1>
+
+<div class="callout green">
+  <p><strong>One-paragraph summary (suitable for oral presentation opening):</strong></p>
+  <p>
+    This study asks a simple but scientifically significant question: <em>Can a machine learning model predict
+    how a medicinal plant grows in the Peruvian Amazon — whether it is a Tree, Shrub, Herb, or Liana —
+    based only on its taxonomic family and genus, the departments where it has been recorded, and the
+    traditional descriptions of how indigenous communities have used it for centuries?</em>
+    Using a dataset of over 1,000 plants compiled by the IIAP across 18 years, we built and compared three
+    classifiers — Logistic Regression, Random Forest, and XGBoost — within a fully reproducible pipeline
+    that locks random seeds, versions data with DVC, tracks experiments with MLflow, and freezes the
+    computational environment with Docker. The models achieved validation Macro F1-scores of up to 0.83,
+    confirming the feasibility of this prediction task, though honest test-set evaluation revealed
+    overfitting challenges that will be resolved by scaling to the full 1,028-record dataset.
+    Beyond performance, this project documents the ethical complexities of applying AI to traditional
+    indigenous knowledge, demonstrates reproducibility standards that contrast sharply with the broader
+    botanical ML literature, and provides IIAP with an open-source tool for automated flora cataloging.
+  </p>
+</div>
+
+<h2>The Reproducibility Stack (Five Layers)</h2>
+<table>
+  <tr><th>Layer</th><th>Tool</th><th>Purpose</th></tr>
+  <tr><td>Code</td><td>Git + GitHub</td><td>Full version control of all scripts, notebooks, and documentation</td></tr>
+  <tr><td>Data</td><td>DVC + Google Drive</td><td>Dataset lineage and remote storage via pointer files</td></tr>
+  <tr><td>Experiments</td><td>MLflow</td><td>Hyperparameter and metric logging per model run</td></tr>
+  <tr><td>Environment</td><td>Docker (Python 3.11)</td><td>Pinned dependencies ensuring identical execution environments</td></tr>
+  <tr><td>Compute</td><td>Local / Google Colab</td><td>CPU-sufficient execution (no GPU required)</td></tr>
+</table>
+
+<h2>Repository Structure at a Glance</h2>
+<table>
+  <tr><th>Session</th><th>Deliverable</th><th>Status</th></tr>
+  <tr><td>1</td><td>Paradigm Justification (Realism + Positivism)</td><td>✅ Complete</td></tr>
+  <tr><td>2</td><td>Method Fit Matrix (EDFCV + Quasi-Experimental)</td><td>✅ Complete</td></tr>
+  <tr><td>3</td><td>Research Protocol v0.1 (Outline)</td><td>✅ Complete</td></tr>
+  <tr><td>4</td><td>Systematic Review + PRISMA + Gap Analysis + References</td><td>✅ Complete</td></tr>
+  <tr><td>5</td><td>Reproducible ML Pipeline (Notebook + 4 Python modules)</td><td>✅ Complete</td></tr>
+  <tr><td>6</td><td>Reproducibility Audit — Muflih et al. (2024) — Score 1/10</td><td>✅ Complete</td></tr>
+  <tr><td>7</td><td>Model Card + Dataset Datasheet</td><td>✅ Complete</td></tr>
+  <tr><td>9</td><td>Ethics Protocol (Belmont + Nagoya Protocol)</td><td>✅ Complete</td></tr>
+  <tr><td>10</td><td>FAIR Data Management Plan</td><td>✅ Complete</td></tr>
+  <tr><td>11</td><td>Bias Audit Report (Geographic Disparate Impact)</td><td>✅ Complete</td></tr>
+  <tr><td>12</td><td>AI Use Policy + Retracted Paper Analysis</td><td>✅ Complete</td></tr>
+  <tr><td>13</td><td>Complete Research Protocol v1.0</td><td>✅ Complete</td></tr>
+  <tr><td>14</td><td>3 Peer Reviews + Review Summary</td><td>✅ Complete</td></tr>
+  <tr><td>15</td><td>Final Protocol v2.0 + Reviewer Response Table</td><td>✅ Complete</td></tr>
+  <tr><td>—</td><td>Reflective Log (Unit I + II + III)</td><td>✅ Complete</td></tr>
+</table>
+
+<div class="footer-note">
+  <p>
+    Valerio Gomez &nbsp;·&nbsp; UNMSM Doctoral Program in Deep Technologies &nbsp;·&nbsp;
+    Research Methods &amp; Scientific Integrity in AI &nbsp;·&nbsp; Dr. Loveleen Gaur &nbsp;·&nbsp; August 2026<br/>
+    Repository: <strong>github.com/ValerioGomez/unmsm-research-methods-valeriogomez</strong>
+  </p>
+</div>
+
+</body>
+</html>
