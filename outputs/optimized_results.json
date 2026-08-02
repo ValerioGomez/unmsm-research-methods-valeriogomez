@@ -1,0 +1,70 @@
+{
+  "baseline": {
+    "LR": {
+      "label": "LR",
+      "val_acc": 0.8,
+      "val_f1": 0.7648,
+      "test_acc": 0.6667,
+      "test_f1": 0.6238
+    },
+    "RF": {
+      "label": "RF",
+      "val_acc": 0.8667,
+      "val_f1": 0.8222,
+      "test_acc": 0.6,
+      "test_f1": 0.4722
+    },
+    "XGB": {
+      "label": "XGB",
+      "val_acc": 0.8667,
+      "val_f1": 0.8333,
+      "test_acc": 0.8,
+      "test_f1": 0.7746
+    }
+  },
+  "optimized": {
+    "LR_opt": {
+      "label": "LR_opt",
+      "val_acc": 0.8,
+      "val_f1": 0.7648,
+      "test_acc": 0.6667,
+      "test_f1": 0.6238,
+      "best_C": 5.0,
+      "cv_f1": 0.7159
+    },
+    "RF_opt": {
+      "label": "RF_opt",
+      "val_acc": 0.7333,
+      "val_f1": 0.5556,
+      "test_acc": 0.6,
+      "test_f1": 0.4667,
+      "best_params": {
+        "max_depth": null,
+        "min_samples_split": 2,
+        "n_estimators": 200
+      },
+      "cv_f1": 0.6579
+    },
+    "XGB_opt": {
+      "label": "XGB_opt",
+      "val_acc": 0.8,
+      "val_f1": 0.7091,
+      "test_acc": 0.7333,
+      "test_f1": 0.6984,
+      "best_params": {
+        "learning_rate": 0.01,
+        "max_depth": 7,
+        "n_estimators": 200,
+        "reg_lambda": 1,
+        "subsample": 1.0
+      },
+      "cv_f1": 0.6617
+    }
+  },
+  "best_model": "XGB_opt",
+  "classes": [
+    "Arbusto",
+    "Hierba",
+    "çrbol"
+  ]
+}
