@@ -54,3 +54,43 @@ As we move into the final stage of the course:
 1. **Regularization:** I will apply regularization and feature selection to the pipeline to address the significant overfitting observed on the test set (F1-score drop from 0.82 to 0.47).
 2. **Database Scale:** Scale the training pipeline from the 100-sample clean subset to the full 1,028-sample IIAP dataset once data pre-cleaning is approved.
 3. **Synthesis:** Compile the complete research protocols (v1.0 and v2.0) and gather classmate peer reviews to finalize the capstone project.
+
+---
+
+## Unit III Reflection: Protocol Synthesis, Peer Review, and Scientific Integrity (Sessions 13–15)
+
+### 1. What Happened?
+The final unit of the course brought together all prior methodological, technical, and ethical work into a cohesive and formally reviewed research protocol:
+
+- **Complete Research Protocol v1.0 (Session 13):** I compiled all previous sessions' outputs — paradigm justification, quasi-experimental design, pipeline architecture, ethics, and bias audit — into a consolidated research protocol. This document formalizes the hypotheses ($H_0$: models cannot outperform baseline; $H_1$: Macro F1 > 0.70; $H_2$: ensemble methods outperform Logistic Regression) and presents preliminary results on the 100-sample clean subset.
+
+- **Peer Review Process (Session 14):** My Research Protocol v1.0 was reviewed by three independent peers. Each reviewer applied a structured multi-criteria evaluation framework covering scientific rigor, reproducibility, ethical compliance, clarity of writing, and feasibility. The reviews identified two critical issues: (1) the risk of overfitting in XGBoost given the small sample size ($n=100$) and high-dimensional TF-IDF feature matrix (>350 features), and (2) the need to make the Nagoya Protocol compliance statement explicit rather than implicit.
+
+- **Calibration Review Activity (Session 14 — Class Activity):** The class performed a structured calibration exercise evaluating a sepsis prediction ML study excerpt. This exercise highlighted how common violations of scientific integrity — such as target leakage (using post-diagnosis treatment decisions as predictors) and unsupported causal conclusions ("our model will reduce mortality") — can render an otherwise technically sophisticated study fundamentally flawed and undeployable.
+
+- **Final Protocol v2.0 (Session 15):** I integrated all peer review feedback into the final protocol. The response table maps each reviewer comment to a specific methodological action: (1) adding Logistic Regression as an $L_2$-regularized parametric baseline, (2) documenting the strict `fit_transform` / `transform` scoping of the ColumnTransformer, and (3) expanding the Nagoya Protocol clause in the ethics section.
+
+- **Modular Pipeline Source Code (Sessions 13–15):** I refactored the Jupyter notebook into a modular Python source code structure (`05_pipeline/src/`) with dedicated `data_loader.py`, `preprocess.py`, `train.py`, and `evaluate.py` modules, enabling reproducibility in both notebook and command-line execution contexts.
+
+### 2. So What?
+This final unit produced my most important intellectual insight of the course: **the distinction between technical performance and scientific validity**.
+
+The Calibration Review exercise crystallized this. A sepsis prediction model reporting AUC = 0.92 looks outstanding at face value, but the methodology excerpt used post-diagnosis clinical decisions (antibiotic timing, ICU transfer) as predictor variables for predicting sepsis *onset*. This is a fundamental instance of **target contamination / immortal time bias**: the model was not learning to detect early sepsis — it was learning what physicians do *after* they already suspect sepsis. The high AUC was a statistical artifact, not evidence of clinical utility.
+
+This connects directly to our own project. Our validation Macro F1-scores (XGBoost: 0.8333; Random Forest: 0.8222) are technically impressive, but the honest test set evaluation (Random Forest: 0.4722) reveals what happens when the model encounters genuinely unseen data. We report this degradation transparently — unlike the retracted botanical study analyzed in Session 12, which fabricated test metrics. This contrast defines the difference between **scientific integrity** and **publication bias**.
+
+The peer review process also revealed that rigor is never self-evident; it must be *demonstrated explicitly*. A reviewer cannot assume that a `ColumnTransformer` is properly scoped. They need to see the code. They cannot assume Nagoya Protocol alignment is intended. They need to see the declaration. Scientific communication requires eliminating ambiguity, not assuming good faith interpretation.
+
+### 3. Now What?
+This course has transformed how I approach the entire research lifecycle. For the next phase of this doctoral project:
+
+1. **Full Dataset Deployment:** Run the finalized pipeline on all 1,028 IIAP records. This is expected to reduce overfitting by providing the ensemble models with sufficient support vectors per taxonomic family/genus category.
+
+2. **Advanced Regularization:** Implement `GridSearchCV` for hyperparameter tuning with L2 regularization in Logistic Regression (`C` parameter) and tree depth/subsampling regularization in XGBoost (`max_depth`, `subsample`, `reg_lambda`) to mitigate the variance observed in the test partition.
+
+3. **Geographical Debiasing:** Apply sample re-weighting by department (inverse frequency weights for Ucayali and Madre de Dios plants) during training to mitigate the Loreto overrepresentation bias documented in the bias audit report.
+
+4. **External Validation:** Seek validation against an independent botanical database (e.g., Tropicos.org or the Global Biodiversity Information Facility — GBIF) to confirm that the model generalizes beyond the IIAP's three geographic departments.
+
+5. **Publication Roadmap:** Target submission of a short communication to *Ecological Informatics* or *Botanical Journal of the Linnean Society*, with full open code (GitHub) and data availability statements compliant with journal FAIR data policies.
+

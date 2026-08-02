@@ -48,41 +48,68 @@ The repository follows the mandatory Capstone project layout:
 
 ```text
 unmsm-research-methods-valeriogomez/
-├── README.md                      # Project overview + run instructions
-├── Dockerfile                     # Isolated Python 3.11 environment
-├── requirements.txt               # Pinned Python package dependencies
-├── data/                          # Data folder (tracked via DVC)
+├── README.md                           # Project overview + run instructions
+├── Dockerfile                          # Isolated Python 3.11 environment
+├── requirements.txt                    # Pinned Python package dependencies
+├── data/                               # Data folder (tracked via DVC)
 │   ├── .gitkeep
-│   ├── dataset-pending in spanish.xlsx.dvc  # Raw Excel pointer
-│   └── processed_dataset.csv.dvc            # Cleaned data pointer
+│   ├── dataset-init.xlsx.dvc           # Raw Excel pointer (DVC-tracked)
+│   └── processed_dataset.csv.dvc      # Cleaned dataset pointer (DVC-tracked)
 │
-├── 01_paradigm/                   # Session 1: Research Paradigm
-│   └── paradigm_justification.md
-├── 02_method/                     # Session 2: Method Fit
-│   └── method_fit_matrix.md
-├── 03_protocol/                   # Sessions 3, 13, 15: Research Protocols
-│   ├── protocol_v0.1.md           # Outline (active)
-│   ├── protocol_v1.0.md           # Draft (pending)
-│   └── protocol_v2.0.md           # Final (pending)
+├── 01_paradigm/                        # Session 1: Research Paradigm
+│   └── paradigm_justification.md      # Realist ontology & positivist epistemology
+├── 02_method/                          # Session 2: Method Fit
+│   └── method_fit_matrix.md           # EDFCV quasi-experimental design
+├── 03_protocol/                        # Sessions 3 / 13 / 15: Research Protocols
+│   ├── protocol_v0.1.md               # Session 3 – Outline
+│   ├── protocol_v1.0.md               # Session 13 – Complete Draft
+│   └── protocol_v2.0.md               # Session 15 – Final + Reviewer Response Table
 │
-├── 04_literature/                 # Session 4: Literature Review & Gap Analysis
-│   ├── systematic_review.md       # Mini systematic review (10 papers)
-│   ├── selected_references.md     # 7 specific core articles & PDFs
-│   ├── prisma_diagram.png         # PRISMA flow diagram
-│   └── gap_analysis.md            # Gap matrix
+├── 04_literature/                      # Session 4: Literature Review & Gap Analysis
+│   ├── systematic_review.md           # Mini systematic review (10 papers)
+│   ├── selected_references.md         # 7 core articles with PDFs
+│   ├── prisma_diagram.png             # PRISMA 2020 flow diagram
+│   └── gap_analysis.md               # 4-dimension research gap matrix
 │
-├── 05_pipeline/                   # Session 5: Reproducible pipeline (Jupyter/source)
-│   ├── notebook.ipynb             # (pending)
-│   └── src/                       # (pending)
-├── 06_repro_audit/                # Session 6: External paper audit
-│   └── reproducibility_audit.md   # (pending)
-├── 07_model_card/                 # Session 7: Card documentation
-│   ├── model_card.md              # (pending)
-│   └── datasheet.md               # (pending)
+├── 05_pipeline/                        # Session 5: Reproducible ML Pipeline
+│   ├── notebook.ipynb                 # Full Jupyter notebook (EDA → Train → Evaluate)
+│   └── src/
+│       ├── data_loader.py             # CSV ingestion & column standardization
+│       ├── preprocess.py              # ColumnTransformer builder (OHE + TF-IDF + CV)
+│       ├── train.py                   # Model training + MLflow logging
+│       └── evaluate.py               # Test-set evaluation + confusion matrix export
 │
-├── reflections/                   # Reflective logs
-│   └── reflective_log.md          # Unit I entry complete
-└── mlruns/                        # MLflow training logs
+├── 06_repro_audit/                     # Session 6: Reproducibility Audit
+│   └── reproducibility_audit.md      # Muflih et al. (2024) audit — Score: 1/10
+│
+├── 07_model_card/                      # Session 7: Documentation Standards
+│   ├── model_card.md                  # Mitchell et al. (2019) Random Forest card
+│   └── datasheet.md                  # Gebru et al. (2021) IIAP dataset datasheet
+│
+├── 09_ethics/                          # Session 9: Ethical Protocol
+│   └── ethics_protocol.md            # Belmont principles + Nagoya Protocol
+│
+├── 10_data_mgmt/                       # Session 10: Data Management
+│   └── data_management_plan.md       # FAIR principles implementation
+│
+├── 11_bias_audit/                      # Session 11: Bias & Fairness
+│   └── bias_audit_report.md          # Geographic disparate impact audit
+│
+├── 12_integrity/                       # Session 12: Scientific Integrity
+│   ├── ai_use_policy.md              # Personal AI use governance policy
+│   └── retracted_paper_analysis.md   # Case study of retracted botanical ML paper
+│
+├── 14_peer_review/                     # Session 14: Peer Reviews
+│   ├── peer_review_summary.md        # Consolidated review & integration matrix
+│   └── peer_reviews/
+│       ├── peer_review_1.md          # Reviewer 1 – ML & Ecology (overfitting)
+│       ├── peer_review_2.md          # Reviewer 2 – Pipeline & Data Leakage
+│       └── peer_review_3.md          # Reviewer 3 – Bioethics & Nagoya Protocol
+│
+├── reflections/                        # Reflective Logs (What / So What / Now What)
+│   └── reflective_log.md             # Unit I, Unit II, and Unit III entries
+│
+└── mlruns/                             # MLflow auto-generated experiment tracking logs
 ```
 
 ---
@@ -147,4 +174,4 @@ docker run -it --rm -p 8888:8888 -v "$(pwd):/project" unmsm-project jupyter lab 
 | **Session 13** | [Complete Research Protocol v1.0](03_protocol/protocol_v1.0.md) | ✅ Active |
 | **Session 14** | [Peer Review Summary](14_peer_review/peer_review_summary.md) ([Review 1](14_peer_review/peer_reviews/peer_review_1.md), [Review 2](14_peer_review/peer_reviews/peer_review_2.md), [Review 3](14_peer_review/peer_reviews/peer_review_3.md)) | ✅ Active |
 | **Session 15** | [Final Protocol v2.0 & Response Table](03_protocol/protocol_v2.0.md) | ✅ Active |
-| **Reflections** | [Unit I & II Reflective Log](reflections/reflective_log.md) | ✅ Active |
+| **Reflections** | [Unit I, II & III Reflective Log](reflections/reflective_log.md) | ✅ Active |

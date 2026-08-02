@@ -46,10 +46,29 @@ The final machine learning pipeline is designed with strict modularity and compu
 ---
 
 ## 5. Peer Review Response Table
-Below is the response table addressing the major comments raised by peer reviewers during the course:
 
-| # | Reviewer Comment | Action Taken in Protocol v2.0 |
+Below is the formal response table addressing the major comments raised by peer reviewers during Session 14. Each comment is linked to a specific mitigation action incorporated into this Protocol v2.0.
+
+| # | Peer Reviewer | Reviewer Comment | Action Taken in Protocol v2.0 |
+|---|---|---|---|
+| 1 | Reviewer 1 (ML & Ecology) | The sample size ($n=100$) is small for XGBoost; combining 300 TF-IDF features with OHE taxonomic features creates a >350-dimension matrix on 70 training samples, which will cause overfitting. | (a) Acknowledged the test-set degradation (Accuracy: 0.60, Macro F1: 0.47) explicitly in Section 3. (b) Added Multinomial Logistic Regression as an $L_2$-regularized parametric baseline. (c) Identified re-evaluation on the full 1,028-record IIAP dataset as the primary next step. |
+| 2 | Reviewer 2 (Pipeline) | Data leakage might occur if TF-IDF and One-Hot Encoding are fit on the whole dataset before the train/val/test split. | Explicitly documented in Section 2 that `preprocessor.fit()` is applied **strictly** on `X_train`, while `X_val` and `X_test` are only transformed using `preprocessor.transform()`. The `05_pipeline/src/preprocess.py` source module enforces this scoping structurally. |
+| 3 | Reviewer 3 (Bioethics) | The protocol must include an explicit Nagoya Protocol compliance statement — it cannot be implied or left to the reader's assumption. | Added the Nagoya Protocol Compliance Statement explicitly in Section 4, including three specific compliance clauses: access authorization, benefit sharing, and no-patenting pledge. |
+
+---
+
+## 6. Limitations & Future Work
+
+### 6.1 Confirmed Limitations
+| Limitation | Description | Planned Mitigation |
 |---|---|---|
-| 1 | The sample size is small for XGBoost; it may overfit. | Acknowledged in Section 3 and the Model Card. Added Logistic Regression as a simpler baseline. |
-| 2 | Data leakage might occur if TF-IDF is fit on the whole dataset. | Added a strict data splitting pipeline that performs split *before* fitting the preprocessor. |
-| 3 | Need to explicitly mention Nagoya Protocol compliance. | Expanded the ethical protocol (Session 9) to document traditional knowledge rights. |
+| **Small Sample Size** | The clean subset ($n=100$) is insufficient to train high-cardinality, high-dimensional non-parametric models without overfitting. | Re-run the pipeline on the full 1,028-record IIAP dataset. |
+| **Geographic Bias** | Loreto is overrepresented (52% of records), causing lower recall for Madre de Dios and Ucayali plant habits. | Apply inverse-frequency sample weighting during training. |
+| **Single-Institution Data** | The model has only been trained and tested on IIAP data from three Peruvian Amazon departments. | Validate against GBIF or Tropicos.org to assess generalizability. |
+| **Missing Liana Class** | The 100-sample clean subset does not include Liana specimens, limiting multi-class evaluation. | Include Liana records from the full IIAP master registry. |
+
+### 6.2 Future Work Roadmap
+1. **Hyperparameter Optimization:** Implement `GridSearchCV` with 5-fold cross-validation for `C` (Logistic Regression), `max_depth` / `reg_lambda` (XGBoost), and `n_estimators` (Random Forest).
+2. **Feature Ablation Study:** Compare three feature engineering strategies (Taxonomic only → Taxonomic + Geographic → Full Features with TF-IDF) to directly answer Specific Question SQ3.
+3. **External Validation:** Test the trained model on botanical records from GBIF filtered to Loreto, Ucayali, and Madre de Dios departments.
+4. **Publication:** Target submission to *Ecological Informatics* (Elsevier) with full open-source code repository and a FAIR-compliant data availability statement.
